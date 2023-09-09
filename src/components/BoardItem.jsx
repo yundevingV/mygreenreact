@@ -58,6 +58,7 @@ const Title = styled.div`
 span{
     font-size : 18px;
     font-weight : 1000;
+    font-family: tway, sans-serif, Arial;
 }
 
 `
@@ -66,7 +67,8 @@ const Content = styled.div`
 
 span {
     font-size : 15px;
-    
+    font-family : 'B';
+
 }
 `
 
@@ -74,8 +76,7 @@ span {
 export default function BoradItem(){
     return (
             <Container>
-                
-                    
+
                     <ItemContainer>
                         <Box>
                             

@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import Board from './pages/board/Board';
+
+import { Route , Routes } from 'react-router';
 
 function App() {
   return (
-    <div className="App">
+    <Routes>
+      <Route path='/' element={<Board /> } />
       
-    </div>
+
+    </Routes>
   );
 }
 

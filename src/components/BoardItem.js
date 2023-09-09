@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import rupy from "../assets/img/rupy.jpg"
 
-
 const Container = styled.div`
 
 margin:0 auto;
@@ -23,7 +22,6 @@ const Box = styled.div`
     height : 120px;
     
     margin: 20px 0px;
-    
 
     border-radius : 4px;
     
@@ -55,6 +53,11 @@ const Hr = styled.hr`
 
 const Title = styled.div`
 
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limit to two lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 span{
     font-size : 18px;
     font-family: H;
@@ -63,15 +66,23 @@ span{
 `
 
 const Content = styled.div`
+    height: 50px;
+  span {
+    font-size: 15px;
+    font-family: EB;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to two lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`;
 
-span {
-    font-size : 15px;
-    font-family : EB;
+const Date = styled.span`
+    font-family: SB;
+    
 
-}
 `
-
-
 export default function BoradItem(){
     return (
             <Container>
@@ -83,12 +94,17 @@ export default function BoradItem(){
                             
                             <Contents>
                                 <Title>
-                                    <span>일기제목</span>
+                                    <span>일기제목일기제목일기제목일기제목일기제목일기제목                                
+                                        
+                                    </span>
+ 
                                 </Title>
                                 <Content>
-                                    <span>본문</span>
+                                    <span>본문본문본본문문본문본문본문본문본문본문본문본문본문본문본문본문본문</span>
                                 </Content>
-                                
+                                <Date>
+                                    2023.08.29
+                                </Date>
                             </Contents>
                         </Box>
                         <Hr />
@@ -104,9 +120,11 @@ export default function BoradItem(){
                                     <span>일기제목</span>
                                 </Title>
                                 <Content>
-                                    <span>본문</span>
+                                    <span>본</span>
                                 </Content>
-                                
+                                <Date>
+                                        2023.08.29
+                                </Date>
                             </Contents>
                         </Box>
                     </ItemContainer>

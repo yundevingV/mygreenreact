@@ -57,8 +57,7 @@ const Title = styled.div`
 
 span{
     font-size : 18px;
-    font-weight : 1000;
-    font-family: tway, sans-serif, Arial;
+    font-family: H;
 }
 
 `
@@ -67,7 +66,7 @@ const Content = styled.div`
 
 span {
     font-size : 15px;
-    font-family : 'B';
+    font-family : EB;
 
 }
 `

@@ -25,7 +25,6 @@ const Box = styled.div`
     margin: 20px 0px;
     
 
-    background-color : #D9D9D9;
     border-radius : 4px;
     
     &:hover {
@@ -50,6 +49,8 @@ const Contents = styled.div`
 
     padding : 10px 20px;
 
+`
+const Hr = styled.hr`
 `
 
 const Title = styled.div`
@@ -90,7 +91,9 @@ export default function BoradItem(){
                                 
                             </Contents>
                         </Box>
+                        <Hr />
                     </ItemContainer>
+
                     <ItemContainer >
                         <Box>
                             

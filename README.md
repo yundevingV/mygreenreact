@@ -5,3 +5,5 @@ react-router-dom
 styled-components
 
 fontawesome
+
+gh-pages (배포)

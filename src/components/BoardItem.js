@@ -21,7 +21,7 @@ const Box = styled.div`
     width : 100%;
     height : 120px;
     
-    margin: 20px 0px;
+    margin: 10px 0px;
 
     border-radius : 4px;
     
@@ -34,9 +34,13 @@ const Box = styled.div`
 
 const ItemImg = styled.img`
 
-padding : 10px;
+width : 30%;
+height: 70%;
 
-border-radius : 20px;
+max-width : 100px;
+
+padding : 10px;
+border-radius : 12px;
 
 `
 
@@ -44,8 +48,7 @@ const Contents = styled.div`
     display: flex;
     flex-direction : column;
     justify-content : flex-start;
-
-    padding : 10px 20px;
+    padding : 10px;
 
 `
 const Hr = styled.hr`
@@ -53,13 +56,15 @@ const Hr = styled.hr`
 
 const Title = styled.div`
 
+    width : 100%;
+
     display: -webkit-box;
     -webkit-line-clamp: 1; /* Limit to two lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 span{
-    font-size : 18px;
+    font-size : 12px;
     font-family: H;
 }
 
@@ -68,10 +73,10 @@ span{
 const Content = styled.div`
     height: 50px;
   span {
-    font-size: 15px;
+    font-size: 10px;
     font-family: EB;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit to two lines */
+    -webkit-line-clamp: 3; /* Limit to two lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -80,7 +85,8 @@ const Content = styled.div`
 
 const Date = styled.span`
     font-family: SB;
-    
+    font-size: 9px;
+
 
 `
 export default function BoradItem(){
@@ -94,13 +100,14 @@ export default function BoradItem(){
                             
                             <Contents>
                                 <Title>
-                                    <span>일기제목일기제목일기제목일기제목일기제목일기제목                                
+                                    <span>
+                                        일기제목일기제목일기제목일기제목일기제목일기제목일기제목일기제목일기제목일기제목일기제목일기제목                                
                                         
                                     </span>
  
                                 </Title>
                                 <Content>
-                                    <span>본문본문본본문문본문본문본문본문본문본문본문본문본문본문본문본문본문</span>
+                                    <span>본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문본문본문문</span>
                                 </Content>
                                 <Date>
                                     2023.08.29

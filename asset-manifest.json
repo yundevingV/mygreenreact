@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/mygreenreact/static/js/main.9f5d2722.js",
+    "static/js/787.faadb041.chunk.js": "/mygreenreact/static/js/787.faadb041.chunk.js",
+    "static/media/AppleSDGothicNeoH.ttf": "/mygreenreact/static/media/AppleSDGothicNeoH.c9b896b8f1d363108e8c.ttf",
+    "static/media/AppleSDGothicNeoB.ttf": "/mygreenreact/static/media/AppleSDGothicNeoB.4175a777557557f7d294.ttf",
+    "static/media/AppleSDGothicNeoEB.ttf": "/mygreenreact/static/media/AppleSDGothicNeoEB.ea6bd07739f11db86707.ttf",
+    "static/media/AppleSDGothicNeoSB.ttf": "/mygreenreact/static/media/AppleSDGothicNeoSB.24f6918836e50d1e5621.ttf",
+    "static/media/heart-regular.svg": "/mygreenreact/static/media/heart-regular.1377e6fe91fe97c152af15550fd01822.svg",
+    "static/media/comment-regular.svg": "/mygreenreact/static/media/comment-regular.052deb8c2dd8f505bcd9ddc07fec8114.svg",
+    "static/media/star-regular.svg": "/mygreenreact/static/media/star-regular.c7a6dc3e04e40ac51679b0ea1e232f9e.svg",
+    "index.html": "/mygreenreact/index.html",
+    "static/media/comment-solid.svg": "/mygreenreact/static/media/comment-solid.c9025ff487d59c79ef6ae2392228774c.svg",
+    "static/media/star-solid.svg": "/mygreenreact/static/media/star-solid.ff556e14ba585ca8238a686727d38394.svg",
+    "static/media/heart-solid.svg": "/mygreenreact/static/media/heart-solid.f468e23db34f3b9d21e2d9cef41a8d3e.svg",
+    "main.9f5d2722.js.map": "/mygreenreact/static/js/main.9f5d2722.js.map",
+    "787.faadb041.chunk.js.map": "/mygreenreact/static/js/787.faadb041.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.9f5d2722.js"
+  ]
+}

@@ -9,9 +9,10 @@ import solidComment from "../../assets/icons/comment-solid.svg";
 import regularStar from "../../assets/icons/star-regular.svg";
 import solidStar from "../../assets/icons/star-solid.svg";
 
-import CommentList from "../../components/CommentList";
+import CommentList from "../../components/comment/CommentList";
 
 import styled from "styled-components";
+import CommentAdd from "../../components/comment/CommentAdd";
 
 
 const Container = styled.div`
@@ -119,6 +120,7 @@ export default function BoardDetail() {
 
           <CBox>
             <CommentList />
+            <CommentAdd />
           </CBox>
 
         </Box>

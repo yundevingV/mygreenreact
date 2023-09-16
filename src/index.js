@@ -4,11 +4,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import rootReducer from './reducer';
+import { GlobalStyle } from './styles/global';
+
 
 const store = createStore(rootReducer);
 
-import { GlobalStyle } from './styles/global';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

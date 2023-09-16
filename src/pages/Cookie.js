@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import {useDispatch , useSelector} from 'react-redux';
-import { saveCookie } from "../action/cookie";
+import { setCookie } from "../reducer/save_cookie";
 
 export default function Cookie (){
     const navigate = useNavigate();
@@ -10,7 +10,7 @@ export default function Cookie (){
     console.log('d');
 
     let cookie = useParams();
-    dispatch(saveCookie(cookie));
+    dispatch(setCookie(cookie));
 
     const stateCookie = useSelector(
         (state ) => state.cookie

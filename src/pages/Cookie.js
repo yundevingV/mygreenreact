@@ -13,10 +13,10 @@ export default function Cookie (){
     dispatch(saveCookie(cookie));
 
     const stateCookie = useSelector(
-        (state ) => state.CookieReducer.cookie
+        (state ) => state.cookie
     )
     //redux에 쿠키 저장
-
+        
     const a = ()=>
     {
         console.log('click');

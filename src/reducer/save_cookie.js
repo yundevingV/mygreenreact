@@ -1,11 +1,10 @@
-// stringReducer.js
 
 // 액션 타입 정의
 const SET_COOKIE = 'SET_COOKIE';
 
-// 초기 상태
+// 초기 상태  
 const initialState = {
-  cookie: '', // 문자열 값을 저장할 상태
+  cookie: 's', // 문자열 값을 저장할 상태
 };
 
 // 리듀서 함수

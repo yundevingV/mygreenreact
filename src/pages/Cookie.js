@@ -7,14 +7,15 @@ export default function Cookie (){
     
     const dispatch = useDispatch();
 
-    console.log('d');
-
     let cookie = useParams();
-    dispatch(setCookie(cookie));
+    console.log(cookie.cookie);
 
-    const stateCookie = useSelector(
-        (state ) => state.cookie
-    )
+    dispatch(setCookie(cookie.cookie));
+
+    const stateCookie = useSelector
+        ((state)  => state.CookieReducer.cookie)
+
+    console.log(stateCookie)
     //redux에 쿠키 저장
         
     const a = ()=>

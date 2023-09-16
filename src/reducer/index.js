@@ -1,8 +1,8 @@
 import { combineReducers } from "redux"
-import SaveCookieReducer from "./save_cookie"
+import CookieReducer from "./save_cookie"
 
 const rootReducer = combineReducers({
-    SaveCookieReducer,
+    CookieReducer,
 })
 
 export default rootReducer;

@@ -5,11 +5,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './reducer';
+import store from './reducer/store';
+
 import { GlobalStyle } from './styles/global';
 
 
-const store = createStore(rootReducer);
 
 
 

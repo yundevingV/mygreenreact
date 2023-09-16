@@ -15,9 +15,9 @@ root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
 
     <GlobalStyle />
-    <Privider store={store} >
+    <Provider store={store} >
     <App />
-    </Privider>
+    </Provider>
   </BrowserRouter>
 );
 

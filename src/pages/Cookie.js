@@ -7,17 +7,19 @@ export default function Cookie (){
     
     const dispatch = useDispatch();
 
+    console.log('d');
 
     let cookie = useParams();
     dispatch(saveCookie(cookie));
 
     const stateCookie = useSelector(
-        (state ) => state.CookieReducer.Cookie
+        (state ) => state.CookieReducer.cookie
     )
     //redux에 쿠키 저장
 
     const a = ()=>
     {
+        console.log('click');
         navigate('/board');
     }
     //board로 네비게이션.

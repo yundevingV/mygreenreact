@@ -1,26 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import BoradItem from '../../components/BoardItem';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 export default function Board(){
 
-    // useEffect(() => {        
-    //     axios
-    //         .get(`https://iotvase.azurewebsites.net/green/diary/:id`, {
-    //             params: {
-    //                 id : id,
-    //             },
-    //             headers: {
-    //                 Authorization: token,
-    //             }
-    //         })
-    //         .then((response) => {
-                
+    const stateCookie = useSelector
+    ((state)  => state.CookieReducer.cookie)
 
-    //         })
-    //         .catch((error) => {
+    const [page,setPage] = useState(0);
 
-    //         });
-    // }, [page]);
+    useEffect(() => {        
+        axios
+            .get(`https://iotvase.azurewebsites.net/green/diary/:${page}`, {
+               
+                headers: {
+                    Cookie: stateCookie,
+                }
+            })
+            .then((response) => {
+                console.log('success')
+
+            })
+            .catch((error) => {
+                console.log('error')
+            });
+    }, []);
 
     return(
         <>

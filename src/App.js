@@ -6,6 +6,7 @@ import BoardDetail from './pages/board/BoardDetail';
 import Link from './pages/Main';
 
 import { Route , Routes } from 'react-router';
+import Cookie from './pages/Cookie';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
     
     <Routes>
       <Route path='/' element={<Link /> } />
-
+      <Route path='cookie/:cookie' element = {<Cookie/>} />
       <Route path='/board' element={<Board /> } />
       <Route path='/boardDetail' element={<BoardDetail /> } />
 

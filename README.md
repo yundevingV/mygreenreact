@@ -6,4 +6,8 @@ styled-components
 
 fontawesome
 
+axios 
+
+redux 
+
 gh-pages (배포)

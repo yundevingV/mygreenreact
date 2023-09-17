@@ -12,18 +12,19 @@ export default function Board(){
 
     useEffect(() => {        
         axios
-            .get(`https://iotvase.azurewebsites.net/green/diary/:${page}`, {
+            .get(`https://iotvase.azurewebsites.net/green/community/board/${page}`, {
                
                 headers: {
                     Cookie: stateCookie,
                 }
             })
             .then((response) => {
+                console.log(response);
                 console.log('success')
 
             })
             .catch((error) => {
-                console.log('error')
+                console.log('fail');
             });
     }, []);
 

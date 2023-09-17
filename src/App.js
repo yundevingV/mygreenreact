@@ -6,7 +6,9 @@ import BoardDetail from './pages/board/BoardDetail';
 import Link from './pages/Main';
 
 import { Route , Routes } from 'react-router';
-import Cookie from './pages/Cookie';
+import BoardCookie from './pages/cookie/BoardCookie';
+import DiaryCookie from './pages/cookie/DiaryCookie';
+import DiaryDetail from './pages/diary/DiaryDetail';
 
 function App() {
 
@@ -14,10 +16,13 @@ function App() {
     
     <Routes>
       <Route path='/' element={<Link /> } />
-      <Route path='cookie/:cookie' element = {<Cookie/>} />
+      <Route path='board/cookie/:cookie' element = {<BoardCookie/>} />
+      <Route path='diary/cookie/:cookie/:id' element = {<DiaryCookie/>} />
       <Route path='/board' element={<Board /> } />
       <Route path='/boardDetail' element={<BoardDetail /> } />
 
+
+      <Route path='/diary/detail/:id' element={<DiaryDetail /> } />
 
     </Routes>
   );

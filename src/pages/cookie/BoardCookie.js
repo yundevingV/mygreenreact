@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import {useDispatch , useSelector} from 'react-redux';
-import { setCookie } from "../reducer/save_cookie";
+import { setCookie } from "../../reducer/save_cookie";
 
-export default function Cookie (){
+export default function BoardCookie (){
     const navigate = useNavigate();
     
     const dispatch = useDispatch();

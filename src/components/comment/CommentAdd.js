@@ -11,14 +11,27 @@ padding : 2%;
 
 `
 const Input = styled.input`
-width : 95%;
-background: #e2e2e2;
+width : 80%;
+
+height:15px;
+background:transparent;
 border-radius : 4px;
 
-padding : 2%;
+padding : 2% 0%;
+&:focus {
+    outline: none; /* 포커스 시 기본 포커스 스타일(파란 테두리) 제거 */
+    border-color: transparent; /* 포커스 시 테두리 제거 */
+  }
 `
 
 const Button = styled.button`
+width: 18%;
+height:30px;
+padding : 1% 0%;
+
+border: 0px;
+background-color: transparent;
+
 `
 
 
@@ -55,6 +68,7 @@ export default function CommentAdd(){
     return(
         <>
             <Box>
+                <form>
                 <Input 
                     type="text"
                     placeholder='댓글을 입력하세요' 
@@ -62,9 +76,9 @@ export default function CommentAdd(){
 
                     />
                 <Button onClick={add}>
-                    전송
+                    게시
                 </Button>
-
+                </form>
             </Box>
         </>
     )

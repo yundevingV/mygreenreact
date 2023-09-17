@@ -146,10 +146,6 @@ export default function DiaryDetail() {
 
           <Hr />
 
-          <CBox>
-            <CommentList />
-            <CommentAdd />
-          </CBox>
 
         </Box>
 

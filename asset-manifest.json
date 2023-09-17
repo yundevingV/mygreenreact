@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/mygreenreact/static/js/main.ff874317.js",
+    "main.js": "/mygreenreact/static/js/main.077a6ee6.js",
     "static/js/787.faadb041.chunk.js": "/mygreenreact/static/js/787.faadb041.chunk.js",
     "static/media/AppleSDGothicNeoH.ttf": "/mygreenreact/static/media/AppleSDGothicNeoH.c9b896b8f1d363108e8c.ttf",
     "static/media/AppleSDGothicNeoB.ttf": "/mygreenreact/static/media/AppleSDGothicNeoB.4175a777557557f7d294.ttf",
@@ -13,10 +13,10 @@
     "static/media/comment-solid.svg": "/mygreenreact/static/media/comment-solid.c9025ff487d59c79ef6ae2392228774c.svg",
     "static/media/star-solid.svg": "/mygreenreact/static/media/star-solid.ff556e14ba585ca8238a686727d38394.svg",
     "static/media/heart-solid.svg": "/mygreenreact/static/media/heart-solid.f468e23db34f3b9d21e2d9cef41a8d3e.svg",
-    "main.ff874317.js.map": "/mygreenreact/static/js/main.ff874317.js.map",
+    "main.077a6ee6.js.map": "/mygreenreact/static/js/main.077a6ee6.js.map",
     "787.faadb041.chunk.js.map": "/mygreenreact/static/js/787.faadb041.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ff874317.js"
+    "static/js/main.077a6ee6.js"
   ]
 }

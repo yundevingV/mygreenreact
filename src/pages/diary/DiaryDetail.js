@@ -95,12 +95,13 @@ export default function DiaryDetail() {
     let {id} = useParams();
     console.log(id)
 
+    
     useEffect(() => {        
         axios
             .get(`https://iotvase.azurewebsites.net/green/diary/${id}`, {
                
                 headers: {
-                    Cookie: stateCookie,
+                    Authorization : stateCookie,
                 }
             })
             .then((response) => {

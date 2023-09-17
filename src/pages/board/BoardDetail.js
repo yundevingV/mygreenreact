@@ -1,4 +1,6 @@
-import React from "react";
+import React,{useEffect} from "react";
+import { useSelector } from "react-redux";
+import {  useParams } from "react-router-dom";
 
 import rupy from "../../assets/img/rupy.jpg";
 
@@ -13,6 +15,8 @@ import CommentList from "../../components/comment/CommentList";
 
 import styled from "styled-components";
 import CommentAdd from "../../components/comment/CommentAdd";
+
+import axios from "axios";
 
 
 const Container = styled.div`
@@ -84,6 +88,31 @@ const CBox = styled.div`
 `
 
 export default function BoardDetail() {
+
+  const stateCookie = useSelector
+  ((state)  => state.CookieReducer.cookie)
+
+  let {id} = useParams();
+  console.log(id)
+  
+  useEffect(() => {        
+      axios
+          .get(`https://iotvase.azurewebsites.net/green/community/read/${id}`, {
+             
+              headers: {
+                  Authorization : stateCookie,
+              }
+          })
+          .then((response) => {
+              console.log(response);
+              console.log('success')
+
+          })
+          .catch((error) => {
+              console.log('fail');
+          });
+  }, []);
+
   return (
     <>
       <Container>

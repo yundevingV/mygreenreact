@@ -6,7 +6,7 @@ export default function Main(){
         
         
             <Link to ='/board' >보드 </Link>
-            <Link to ='/boardDetail' >보드데테일 </Link>
+            <Link to ='/board/detail' >보드데테일 </Link>
 
             
         </>

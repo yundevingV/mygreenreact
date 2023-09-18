@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BoradItem from '../../components/BoardItem';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import BackButton from '../../components/common/Back';
 
 export default function Board(){
 
@@ -35,7 +36,7 @@ export default function Board(){
     
     return(
         <>
-
+            <BackButton />
             {data ? <BoradItem item={data}/> : <></>}
         </>
 

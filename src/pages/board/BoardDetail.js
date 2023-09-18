@@ -2,7 +2,7 @@ import React,{useEffect , useState} from "react";
 import { useSelector } from "react-redux";
 import {  useParams } from "react-router-dom";
 
-import BoardItem from "../../components/BoardItem";
+import DiaryItem from "../../components/DiaryItem";
 
 import CommentList from "../../components/comment/CommentList";
 
@@ -112,7 +112,7 @@ export default function BoardDetail() {
     <>
       <Container>
         <Box>
-          <BoardItem item={data} />
+          <DiaryItem item={data} />
 
           <CBox>
             <CommentList />

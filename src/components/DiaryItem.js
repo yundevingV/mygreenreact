@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -95,38 +95,43 @@ export default function DiaryItem(props){
     const decodedImage = `data:image/jpeg;base64,${base64}`;
     return decodedImage;
   };
+  const [isDataLoaded, setDataLoaded] = useState(false);
+  useEffect(() => {
+    // 데이터 로딩 로직을 이곳에 구현
+    // 예: API 호출, 데이터 가져오기 등...
 
+    // 데이터 로딩이 완료되면 상태 업데이트
+    setDataLoaded(true);
+  }, []);
   const decodedImage = decodeBase64(props.item.image);
 
-    return (
-            <Container>
+  return (
+    <Container>
+      <ItemContainer>
+        {isDataLoaded ? (
+          <Box>
+            <ItemImg src={decodeBase64(props.item.image)} alt="x" />
+            <Contents>
+              <Title>
+                <span>{props.item.title}</span>
+              </Title>
+              <Content>
+                <span>{props.item.content}</span>
+              </Content>
+              <Date>{props.item.date ?
+                <>{props.item.date.split('T')[0].replace(/-/g, '.')}</>
+              : <></>}
+              
+              </Date>
+            </Contents>
+          </Box>
+        ) : (
+            <></>
 
-                    <ItemContainer>
-                        <Box>
-                            
-                            <ItemImg src={decodedImage} alt='x' />
-                            
-                            <Contents>
-                                <Title>
-                                    <span>
-                                        {props.item.title}
-                                        
-                                    </span>
- 
-                                </Title>
-                                <Content>
-                                    <span>{props.item.content}</span>
-                                </Content>
-                                <Date>
-                                    {props.item.date.split('T')[0].replace(/-/g, '.')}
-                                </Date>
-                            </Contents>
-                        </Box>
-                        <Hr />
-                    </ItemContainer>
-
-                    
-            </Container>
-    );
+        )}
+        <Hr />
+      </ItemContainer>
+    </Container>
+  );
 }
 

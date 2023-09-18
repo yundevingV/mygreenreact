@@ -8,11 +8,13 @@ export default function Board(){
     const stateCookie = useSelector
     ((state)  => state.CookieReducer.cookie)
 
-    const [page,setPage] = useState(0);
+    const [page,setPage] = useState(1);
+    const [data,setData] =useState();
+    const [totalpage,setTotalPage] = useState();
 
     useEffect(() => {        
         axios
-            .get(`https://iotvase.azurewebsites.net/green/community/board/${page}`, {
+            .get(`https://iotvase.azurewebsites.net/community/board/${page}`, {
                
                 headers: {
                     // Cookie: stateCookie,
@@ -20,6 +22,9 @@ export default function Board(){
             })
             .then((response) => {
                 console.log(response);
+                setTotalPage(response.data.totalpage);
+                setData(response.data);
+
                 console.log('success')
 
             })
@@ -27,10 +32,10 @@ export default function Board(){
                 console.log('fail');
             });
     }, []);
-
+    
     return(
         <>
-            <BoradItem />
+            <BoradItem item={data}/>
         </>
 
     )

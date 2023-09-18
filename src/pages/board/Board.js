@@ -6,6 +6,7 @@ import BackButton from '../../components/common/Back';
 import styled from 'styled-components';
 import { setCookie } from '../../reducer/save_cookie';
 import { useParams } from 'react-router';
+import Pagination from '../../components/common/Paging';
 
 const SizedBox = styled.div`
 height: 20px;
@@ -14,14 +15,17 @@ height: 20px;
 export default function Board(){
 
 
-
     const dispatch = useDispatch();
+    
+    const page = useSelector
+    ((state)  => state.pageReducer.page)
+
     let id = useParams();
 
-    const [page,setPage] = useState(1);
-    const [data,setData] =useState();
-    const [totalpage,setTotalPage] = useState();
 
+    const [data,setData] =useState();
+    const [totalPage,setTotalPage] = useState(1);
+    
     useEffect(() => {        
         axios
             .get(`https://iotvase.azurewebsites.net/community/board/${page}`, {
@@ -32,7 +36,8 @@ export default function Board(){
             })
             .then((response) => {
                 console.log(response);
-                setTotalPage(response.data.totalpage);
+                setTotalPage(response.data.totalPages);
+
                 setData(response.data);
 
                 console.log('success')
@@ -44,13 +49,29 @@ export default function Board(){
                 console.log('fail');
             });
     }, [page]);
-    
     return(
         <>
             <BackButton />
             <SizedBox />
             {data ? <BoradItem item={data}/> : <></>}
+            <SizedBox />
+            <SizedBox />
+
+            <Div>
+            {data && (
+                <>
+                    <Pagination totalPage={totalPage} />
+                </>
+                )}
+
+
+            </Div>
         </>
 
     )
 }
+
+const Div = styled.div`
+  margin: 0 auto;
+  text-align: center; /* 가운데 정렬을 추가 */
+`;

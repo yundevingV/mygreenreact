@@ -48,7 +48,12 @@ const Contents = styled.div`
   padding: 10px;
 `;
 
-const Hr = styled.hr``;
+const Hr = styled.hr`
+  width: 80%; /* 원하는 너비 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  border: 1px solid #ccc; /* 테두리 스타일 및 색상 설정 */
+`;
+
 
 const Title = styled.div`
   width: 100%;

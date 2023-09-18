@@ -46,7 +46,6 @@ export default function DiaryDetail() {
 
   return (
     <>
-          <BackButton />
 
       <Container>
         <DiaryItem item={data} />

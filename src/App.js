@@ -18,7 +18,7 @@ function App() {
       <Route path='/' element={<Link /> } />
       <Route path='board/cookie/:cookie' element = {<BoardCookie/>} />
       <Route path='diary/cookie/:cookie/:id' element = {<DiaryCookie/>} />
-      <Route path='/board:id' element={<Board /> } />
+      <Route path='/board/:id' element={<Board /> } />
       
       <Route path='/board/detail/:id' element={<BoardDetail /> } />
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Button = styled.button`
-position: absolute;
+position: fixed;
 
 font-size : 30px;
 

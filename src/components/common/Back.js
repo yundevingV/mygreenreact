@@ -1,5 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const Button = styled.button`
+position: absolute;
+
+font-size : 30px;
+
+background: transparent;
+border: 0px;
+font-weight : 100;
+
+font-family : SB;
+`
 
 function BackButton() {
   const navigate = useNavigate();
@@ -9,9 +22,10 @@ function BackButton() {
   };
 
   return (
-    <button onClick={goBack} style={{ position: "absolute", top: 10, left: 10 }}>
-      뒤로 가기
-    </button>
+    <Button onClick={goBack} >
+        &lt;
+
+    </Button>
   );
 }
 

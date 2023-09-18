@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import {  useParams } from "react-router-dom";
 
 import DiaryItem from "../../components/DiaryItem";
-
+import BackButton from "../../components/common/Back";
 import CommentList from "../../components/comment/CommentList";
 
 import styled from "styled-components";
@@ -110,6 +110,8 @@ export default function BoardDetail() {
 
   return (
     <>
+          <BackButton />
+
       <Container>
         <Box>
           <DiaryItem item={data} />

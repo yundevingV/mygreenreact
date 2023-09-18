@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import { useSelector } from "react-redux";
 import {  useParams } from "react-router-dom";
-
+import BackButton from "./common/Back";
 
 
 import styled from "styled-components";
@@ -86,8 +86,10 @@ export default function DiaryDetail(props) {
   const decodedImage = decodeBase64(props.item.image);
     
   return (
-    <>
+    <> 
+
       <Container>
+
         <Box>
           <ImgBox>
             <Img src={decodedImage} alt='x' />

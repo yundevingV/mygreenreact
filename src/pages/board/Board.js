@@ -3,6 +3,11 @@ import BoradItem from '../../components/BoardItem';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import BackButton from '../../components/common/Back';
+import styled from 'styled-components';
+
+const SizedBox = styled.div`
+height: 20px;
+`
 
 export default function Board(){
 
@@ -37,6 +42,7 @@ export default function Board(){
     return(
         <>
             <BackButton />
+            <SizedBox />
             {data ? <BoradItem item={data}/> : <></>}
         </>
 

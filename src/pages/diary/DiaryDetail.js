@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import {  useParams } from "react-router-dom";
-
+import BackButton from "../../components/common/Back";
 
 import styled from "styled-components";
 
@@ -46,6 +46,8 @@ export default function DiaryDetail() {
 
   return (
     <>
+          <BackButton />
+
       <Container>
         <DiaryItem item={data} />
 

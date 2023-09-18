@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom"; // react-router-dom 라이브러리 가져오기
+import BackButton from "./common/Back";
 
 const Container = styled.div`
   margin: 0 auto;

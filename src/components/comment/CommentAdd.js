@@ -43,7 +43,7 @@ export default function CommentAdd(){
 
     const stateCookie = useSelector
     ((state)  => state.CookieReducer.cookie)
-
+    console.log(stateCookie);
     let {id} = useParams();
 
 
@@ -58,7 +58,8 @@ export default function CommentAdd(){
         };
     
         const data = {
-            content : {...commentInput},
+            content : 'con',
+            userid : stateCookie,
         };
     
         try {

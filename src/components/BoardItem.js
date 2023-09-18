@@ -78,14 +78,21 @@ export default function BoradItem(props) {
   
   let post = props?.item?.posts;
 
+  const decodeBase64 = (base64) => {
+    const decodedImage = `data:image/jpeg;base64,${base64}`;
+    return decodedImage;
+  };
+
+  const decodedImage = decodeBase64(props.item.posts.image);
+
   return (
     <Container>
       <ItemContainer>
-        {post?.map((item) => (
+        {post?.map((item,index) => (
           <Link to={`./detail/${item._id}`} key={item._id}>
             <Box>
               {/* 이미지를 표시하려면 이미지 URL을 사용하도록 수정 */}
-              <ItemImg src={item.image} alt='x' />
+              <ItemImg src={decodeBase64(item.image)} alt='x' />
               <Contents>
                 <Title>
                   <span>{item.title}</span>

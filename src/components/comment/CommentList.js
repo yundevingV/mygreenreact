@@ -43,44 +43,31 @@ const Content = styled.span`
   font-family: EB;
 `;
 
-export default function BoardDetail() {
+export default function BoardDetail(props) {
+    console.log(props)
     return (
     <>
         <Container>
+            {props.item.map((item,idx) =>
             <Box>
                 <TBox>
                     <Name>
-                        사용자
+                        {item.writer}
                     </Name>
                     <Date>
-                        08.28 
+                        
                     </Date>
                 </TBox>
 
                 <BBox>
                     <Content>
-                        재미겠네요
+                        {item.content}
 
                     </Content>
                 </BBox>
             </Box>
-            <Box>
-                <TBox>
-                    <Name>
-                        사용자2
-                    </Name>
-                    <Date>
-                        08.28 
-                    </Date>
-                </TBox>
+            )}
 
-                <BBox>
-                    <Content>
-                        부럽네요
-
-                    </Content>
-                </BBox>
-            </Box>
         </Container>
     </>
     );

@@ -94,7 +94,7 @@ export default function BoradItem(props) {
       <ItemContainer>
         {post?.map((item, index) => (
           // StyledLink 컴포넌트로 Link 감싸기
-          <StyledLink to={`./detail/${item._id}`} key={item._id}>
+          <StyledLink to={`/board/detail/${item._id}`} key={item._id}>
             <Box>
               {/* 이미지를 표시하려면 이미지 URL을 사용하도록 수정 */}
               <ItemImg src={decodeBase64(item.image)} alt='x' />

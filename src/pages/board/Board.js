@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import BoradItem from '../../components/BoardItem';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import BackButton from '../../components/common/Back';
 import styled from 'styled-components';
+import { setCookie } from '../../reducer/save_cookie';
+import { useParams } from 'react-router';
 
 const SizedBox = styled.div`
 height: 20px;
@@ -11,8 +13,10 @@ height: 20px;
 
 export default function Board(){
 
-    const stateCookie = useSelector
-    ((state)  => state.CookieReducer.cookie)
+
+
+    const dispatch = useDispatch();
+    let id = useParams();
 
     const [page,setPage] = useState(1);
     const [data,setData] =useState();
@@ -32,6 +36,8 @@ export default function Board(){
                 setData(response.data);
 
                 console.log('success')
+
+                dispatch(setCookie(id));
 
             })
             .catch((error) => {

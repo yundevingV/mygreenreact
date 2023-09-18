@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const Box = styled.div`
   margin : 0 auto;
-  width: 70%; 
+  width: 90%; 
   max-width: 800px; /* Set a maximum width for content */
   padding: 16px; /* Add padding for spacing */
 `;
@@ -37,41 +37,7 @@ const Img = styled.img`
   height: auto; /* Maintain aspect ratio */
 `;
 
-const TBox = styled.div`
-  width: 70%; 
-  padding : 5%;
 
-`;
-
-const Date = styled.span`
-  font-family: SB;
-`;
-
-const BBox = styled.div`
-  width: 90%; 
-  border-radius: 12px;
-  padding : 5%;
-`;
-
-const Content = styled.span`
-  font-family: EB;
-`;
-
-const EBox = styled.div`
-  width: 70%; 
-  border-radius: 12px;
-  
-  padding : 1% 5%;
-
-  display: flex;
-`;
-
-const Icon = styled.img`
-width: 20px;
-
-margin : 0px 10px;
-
-`
 const Hr = styled.hr``
 
 const CBox = styled.div`
@@ -82,7 +48,7 @@ const CBox = styled.div`
 
 export default function BoardDetail() {
 
-  const stateCookie = useSelector
+  const userid = useSelector
   ((state)  => state.CookieReducer.cookie)
 
   let {id} = useParams();
@@ -99,7 +65,7 @@ export default function BoardDetail() {
           })
           .then((response) => {
               setData(response.data);
-              console.log(response);
+              console.log(response.data.comments);
               console.log('success')
 
           })
@@ -116,9 +82,10 @@ export default function BoardDetail() {
         <Box>
           <DiaryItem item={data} />
 
+          <Hr />
           <CBox>
-            <CommentList />
-            <CommentAdd />
+            <CommentList item={data?.comments} />
+            <CommentAdd userid={userid} />
           </CBox>
 
         </Box>

@@ -37,20 +37,20 @@ background-color: transparent;
 
 
 
-export default function CommentAdd(){
+export default function CommentAdd(props){
 
     const commentInput = useInput(''); // 초기값을 빈 문자열로 설정
 
-    const stateCookie = useSelector
+    const userid = useSelector
     ((state)  => state.CookieReducer.cookie)
-    console.log(stateCookie);
+
     let {id} = useParams();
 
 
 
     const saveComment = async (e) => {
 
-        const url = `https://iotvase.azurewebsites.net/community/board/${id}`;
+        const url = `https://iotvase.azurewebsites.net/community/read/${id}`;
     
         const headers = {
             // Authorization: token,
@@ -58,8 +58,8 @@ export default function CommentAdd(){
         };
     
         const data = {
-            content : 'con',
-            userid : stateCookie,
+            content : commentInput.value,
+            userid : userid,
         };
     
         try {
@@ -75,6 +75,8 @@ export default function CommentAdd(){
             console.error('Error:', error);
             }
         };
+        console.log(userid)
+        console.log({...commentInput})
     return(
         <>
             <Box>

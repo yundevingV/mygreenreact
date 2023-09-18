@@ -4,7 +4,7 @@ const SET_COOKIE = 'SET_COOKIE';
 
 // 초기 상태  
 const initialState = {
-  cookie: 's', // 문자열 값을 저장할 상태
+  cookie: '', // 문자열 값을 저장할 상태
 };
 
 // 리듀서 함수

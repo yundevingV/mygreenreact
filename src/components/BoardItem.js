@@ -75,13 +75,13 @@ const Date = styled.span`
 `;
 
 export default function BoradItem(props) {
-console.log(props)
-  let post = props.item.posts;
+  
+  let post = props?.item?.posts;
 
   return (
     <Container>
       <ItemContainer>
-        {post.map((item) => (
+        {post?.map((item) => (
           <Link to={`./detail/${item._id}`} key={item._id}>
             <Box>
               {/* 이미지를 표시하려면 이미지 URL을 사용하도록 수정 */}

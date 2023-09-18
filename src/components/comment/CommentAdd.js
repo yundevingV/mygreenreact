@@ -47,24 +47,33 @@ export default function CommentAdd(){
     let {id} = useParams();
 
 
-    const config = {
-        headers: {
-        // Authorization: stateCookie,
-        },
-    };
-    const add = () => {
-        axios
-        .post(`https://iotvase.azurewebsites.net/community/read/${id}`, commentInput, config)
-        .then((response) => {
-        
-        console.log(response);
-        
-        })
-        .catch((error) => {
-        console.log('Error:', error);
-        });
 
-    };
+    const saveComment = async (e) => {
+
+        const url = `https://iotvase.azurewebsites.net/community/board/${id}`;
+    
+        const headers = {
+            // Authorization: token,
+            // 'Content-Type': 'application/json',
+        };
+    
+        const data = {
+            content : {...commentInput},
+        };
+    
+        try {
+            e.preventDefault(); // 기본 동작 막기
+
+            const response = await axios.post(url, data, { headers });
+            console.log('Response:', response.data);
+            alert('댓글을 성공적으로 작성했습니다!');
+            window.location.reload();
+
+
+            } catch (error) {
+            console.error('Error:', error);
+            }
+        };
     return(
         <>
             <Box>
@@ -75,9 +84,10 @@ export default function CommentAdd(){
                     {...commentInput} // useInput 함수에서 반환한 value와 onChange를 적용
 
                     />
-                <Button onClick={add}>
+                <Button type="button" onClick={saveComment}>
                     게시
                 </Button>
+
                 </form>
             </Box>
         </>

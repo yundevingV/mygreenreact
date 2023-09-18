@@ -31,11 +31,12 @@ export default function Board(){
             .catch((error) => {
                 console.log('fail');
             });
-    }, []);
+    }, [page]);
     
     return(
         <>
-            <BoradItem item={data}/>
+
+            {data ? <BoradItem item={data}/> : <></>}
         </>
 
     )

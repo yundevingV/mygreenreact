@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/mygreenreact/static/js/main.fc1a0bd6.js",
+    "main.js": "/mygreenreact/static/js/main.4f567c43.js",
     "static/js/787.faadb041.chunk.js": "/mygreenreact/static/js/787.faadb041.chunk.js",
     "static/media/AppleSDGothicNeoH.ttf": "/mygreenreact/static/media/AppleSDGothicNeoH.c9b896b8f1d363108e8c.ttf",
     "static/media/AppleSDGothicNeoB.ttf": "/mygreenreact/static/media/AppleSDGothicNeoB.4175a777557557f7d294.ttf",
     "static/media/AppleSDGothicNeoEB.ttf": "/mygreenreact/static/media/AppleSDGothicNeoEB.ea6bd07739f11db86707.ttf",
     "static/media/AppleSDGothicNeoSB.ttf": "/mygreenreact/static/media/AppleSDGothicNeoSB.24f6918836e50d1e5621.ttf",
     "index.html": "/mygreenreact/index.html",
-    "main.fc1a0bd6.js.map": "/mygreenreact/static/js/main.fc1a0bd6.js.map",
+    "main.4f567c43.js.map": "/mygreenreact/static/js/main.4f567c43.js.map",
     "787.faadb041.chunk.js.map": "/mygreenreact/static/js/787.faadb041.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.fc1a0bd6.js"
+    "static/js/main.4f567c43.js"
   ]
 }

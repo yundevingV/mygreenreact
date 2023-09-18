@@ -89,7 +89,7 @@ const Date = styled.span`
     font-size: 0.9rem;
 `
 
-export default function BoradItem(props){
+export default function DiaryItem(props){
   // Base64 이미지 디코딩
   const decodeBase64 = (base64) => {
     const decodedImage = `data:image/jpeg;base64,${base64}`;

@@ -1,15 +1,8 @@
-import React,{useEffect} from "react";
+import React,{useEffect , useState} from "react";
 import { useSelector } from "react-redux";
 import {  useParams } from "react-router-dom";
 
-import rupy from "../../assets/img/rupy.jpg";
-
-import regularHeart from "../../assets/icons/heart-regular.svg";
-import solidHeart from "../../assets/icons/heart-solid.svg";
-import regularComment from "../../assets/icons/comment-regular.svg";
-import solidComment from "../../assets/icons/comment-solid.svg";
-import regularStar from "../../assets/icons/star-regular.svg";
-import solidStar from "../../assets/icons/star-solid.svg";
+import BoardItem from "../../components/BoardItem";
 
 import CommentList from "../../components/comment/CommentList";
 
@@ -95,14 +88,17 @@ export default function BoardDetail() {
   let {id} = useParams();
   console.log(id)
   
+  const [data,setData] = useState('');
+
   useEffect(() => {        
       axios
-          .get(`https://iotvase.azurewebsites.net/green/community/read/${id}`, {             
+          .get(`https://iotvase.azurewebsites.net/community/read/${id}`, {             
               headers: {
                   // Authorization : stateCookie,
               }
           })
           .then((response) => {
+              setData(response.data);
               console.log(response);
               console.log('success')
 
@@ -116,35 +112,7 @@ export default function BoardDetail() {
     <>
       <Container>
         <Box>
-          <ImgBox>
-            <Img src={rupy} alt='x' />
-          </ImgBox>
-
-          <TBox>
-            <Date>
-              2023.08.28 <span> 😍 </span>
-            </Date>
-          </TBox>
-
-          <BBox>
-            <Content>
-              오늘은 소풍을 해서 즐거웠다 날이 더웠지만 친구들과 재밌게 놀아서 좋았다.
-
-            </Content>
-          </BBox>
-
-          <EBox>
-
-            {true ? <Icon src={regularHeart} alt = 'x'/> : <Icon src={solidHeart} alt = 'x'/> }
-            1
-            {true ? <Icon src={regularComment} alt ='x'/> : <Icon src={solidComment} alt='x' />}
-            2
-            {true ? <Icon src={regularStar} alt ='x'/> : <Icon src={solidStar} alt='x' /> }
-            0
-            
-          </EBox>
-
-          <Hr />
+          <BoardItem item={data} />
 
           <CBox>
             <CommentList />

@@ -49,12 +49,12 @@ export default function CommentAdd(){
 
     const config = {
         headers: {
-        Authorization: stateCookie,
+        // Authorization: stateCookie,
         },
     };
     const add = () => {
         axios
-        .post(`https://iotvase.azurewebsites.net/green/community/read/${id}`, commentInput, config)
+        .post(`https://iotvase.azurewebsites.net/community/read/${id}`, commentInput, config)
         .then((response) => {
         
         console.log(response);

@@ -83,6 +83,13 @@ export default function DiaryDetail(props) {
     return decodedImage;
   };
 
+  function formatDate(dateString) {
+    const parts = dateString.split(" ");
+    const datePart = parts[0];
+    const timePart = parts[1].split(".")[0];
+    return `${datePart} ${timePart}`;
+  }
+
   const decodedImage = decodeBase64(props.item.image);
     
   return (
@@ -97,7 +104,7 @@ export default function DiaryDetail(props) {
 
           <TBox>
           <Date>{props.item.date ?
-                <>{props.item.date.split('T')[0].replace(/-/g, '.')}
+                <>{formatDate(props.item.date)}
                 {props.item.emotion}
                 </>
               : <></>}

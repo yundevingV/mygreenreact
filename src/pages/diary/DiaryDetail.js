@@ -98,10 +98,8 @@ export default function DiaryDetail() {
     
     useEffect(() => {        
         axios
-            .get(`https://iotvase.azurewebsites.net/green/diary/${id}`, {
-               
+            .get(`https://iotvase.azurewebsites.net/community/read/${id}`, {
                 headers: {
-                    Authorization : stateCookie,
                 }
             })
             .then((response) => {
@@ -133,16 +131,6 @@ export default function DiaryDetail() {
             </Content>
           </BBox>
 
-          <EBox>
-
-            {true ? <Icon src={regularHeart} alt = 'x'/> : <Icon src={solidHeart} alt = 'x'/> }
-            1
-            {true ? <Icon src={regularComment} alt ='x'/> : <Icon src={solidComment} alt='x' />}
-            2
-            {true ? <Icon src={regularStar} alt ='x'/> : <Icon src={solidStar} alt='x' /> }
-            0
-            
-          </EBox>
 
           <Hr />
 

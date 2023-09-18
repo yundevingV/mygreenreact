@@ -97,10 +97,9 @@ export default function BoardDetail() {
   
   useEffect(() => {        
       axios
-          .get(`https://iotvase.azurewebsites.net/green/community/read/${id}`, {
-             
+          .get(`https://iotvase.azurewebsites.net/green/community/read/${id}`, {             
               headers: {
-                  Authorization : stateCookie,
+                  // Authorization : stateCookie,
               }
           })
           .then((response) => {

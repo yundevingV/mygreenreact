@@ -15,7 +15,7 @@ export default function Board(){
             .get(`https://iotvase.azurewebsites.net/green/community/board/${page}`, {
                
                 headers: {
-                    Cookie: stateCookie,
+                    // Cookie: stateCookie,
                 }
             })
             .then((response) => {

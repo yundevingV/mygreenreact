@@ -1,137 +1,121 @@
-import React ,{useState,useEffect} from "react";
+import React,{useEffect,useState} from "react";
+import { useSelector } from "react-redux";
+import {  useParams } from "react-router-dom";
+
+
+
 import styled from "styled-components";
 
+
+
 const Container = styled.div`
-
-margin:0 auto;
-
-display : flex;
-flex-direction : column;
-`
-
-const ItemContainer = styled.div`
-margin:0 auto;
-width : 100%;
-
-
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: left; /* Align text to the left */
+`;
 
 const Box = styled.div`
-    display: flex;
+  margin : 0 auto;
+  width: 70%; 
+  max-width: 800px; /* Set a maximum width for content */
+  padding: 16px; /* Add padding for spacing */
+`;
 
-    width : 100%;
-    height : 120px;
-    
-    margin: 10px 0px;
+const ImgBox = styled.div`
+  display: flex;
+  justify-content: center; /* Center the photo horizontally */
+`;
 
-    border-radius : 4px;
-    
-    &:hover {
-        background-color : #e2e2e2;
-        cursor : pointer;
-    }
+const Img = styled.img`
+  border-radius: 12px;
+  width: 70%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+`;
 
-`
+const TBox = styled.div`
+  width: 70%; 
+  padding : 5%;
 
-const ItemImg = styled.img`
-
-width : 30%;
-height: 70%;
-
-max-width : 100px;
-
-padding : 10px;
-border-radius : 12px;
-
-`
-
-const Contents = styled.div`
-    display: flex;
-    flex-direction : column;
-    justify-content : flex-start;
-    padding : 10px;
-
-`
-const Hr = styled.hr`
-`
-
-const Title = styled.div`
-
-    width : 100%;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 1; /* Limit to two lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-span{
-    font-size: 1rem;
-    font-family: H;
-}
-
-`
-
-const Content = styled.div`
-    height: 50px;
-  span {
-    font-size: 0.8rem;
-    font-family: EB;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to two lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 `;
 
 const Date = styled.span`
-    font-family: SB;
-    font-size: 0.9rem;
-`
+  font-family: SB;
+`;
 
-export default function DiaryItem(props){
+const BBox = styled.div`
+  width: 90%; 
+  border-radius: 12px;
+  padding : 5%;
+`;
+
+const Content = styled.span`
+  font-family: B;
+`;
+const Title = styled.h3`
+  font-family: EB;
+`;
+const EBox = styled.div`
+  width: 70%; 
+  border-radius: 12px;
+  
+  padding : 1% 5%;
+
+  display: flex;
+`;
+
+const Hr = styled.hr``
+
+
+export default function DiaryDetail(props) {
+
+    const stateCookie = useSelector
+    ((state)  => state.CookieReducer.cookie)
+
+    let {id} = useParams();
+    console.log(id)
   // Base64 이미지 디코딩
   const decodeBase64 = (base64) => {
     const decodedImage = `data:image/jpeg;base64,${base64}`;
     return decodedImage;
   };
-  const [isDataLoaded, setDataLoaded] = useState(false);
-  useEffect(() => {
-    // 데이터 로딩 로직을 이곳에 구현
-    // 예: API 호출, 데이터 가져오기 등...
 
-    // 데이터 로딩이 완료되면 상태 업데이트
-    setDataLoaded(true);
-  }, []);
   const decodedImage = decodeBase64(props.item.image);
-
+    
   return (
-    <Container>
-      <ItemContainer>
-        {isDataLoaded ? (
-          <Box>
-            <ItemImg src={decodeBase64(props.item.image)} alt="x" />
-            <Contents>
-              <Title>
-                <span>{props.item.title}</span>
-              </Title>
-              <Content>
-                <span>{props.item.content}</span>
-              </Content>
-              <Date>{props.item.date ?
-                <>{props.item.date.split('T')[0].replace(/-/g, '.')}</>
+    <>
+      <Container>
+        <Box>
+          <ImgBox>
+            <Img src={decodedImage} alt='x' />
+          </ImgBox>
+
+          <TBox>
+          <Date>{props.item.date ?
+                <>{props.item.date.split('T')[0].replace(/-/g, '.')}
+                {props.item.emotion}
+                </>
               : <></>}
               
               </Date>
-            </Contents>
-          </Box>
-        ) : (
-            <></>
+          </TBox>
 
-        )}
-        <Hr />
-      </ItemContainer>
-    </Container>
+          <BBox>
+            <Title>
+            {props.item.title}
+            </Title>
+
+            <Content>
+              {props.item.content}
+            </Content>
+          </BBox>
+
+         
+
+        </Box>
+
+
+      </Container>
+    </>
   );
 }
-

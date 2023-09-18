@@ -84,7 +84,12 @@ export default function BoardDetail() {
 
           <Hr />
           <CBox>
+            {data.comments ? 
             <CommentList item={data?.comments} />
+            :
+            <></>
+}
+
             <CommentAdd userid={userid} />
           </CBox>
 

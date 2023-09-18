@@ -47,6 +47,7 @@ export default function BoardDetail(props) {
     console.log(props)
     return (
     <>
+    {props ?
         <Container>
             {props.item.map((item,idx) =>
             <Box>
@@ -69,6 +70,9 @@ export default function BoardDetail(props) {
             )}
 
         </Container>
+        :
+        <></>    
+        }
     </>
     );
 }

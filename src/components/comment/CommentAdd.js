@@ -59,7 +59,7 @@ export default function CommentAdd(props){
     
         const data = {
             content : commentInput.value,
-            userid : userid,
+            userid : userid.id,
         };
     
         try {
@@ -70,6 +70,7 @@ export default function CommentAdd(props){
             alert('댓글을 성공적으로 작성했습니다!');
             window.location.reload();
 
+            console.log(data);
 
             } catch (error) {
             console.error('Error:', error);

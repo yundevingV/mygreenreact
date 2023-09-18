@@ -25,12 +25,15 @@ const Box = styled.div`
 const ImgBox = styled.div`
   display: flex;
   justify-content: center; /* Center the photo horizontally */
+  max-height : 400px;
+
 `;
 
 const Img = styled.img`
   border-radius: 12px;
   width: 70%; /* Make the image responsive */
   height: auto; /* Maintain aspect ratio */
+  max-height : 400px;
 `;
 
 const TBox = styled.div`

@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom"; // react-router-dom 라이브러리 가져오기
 import BackButton from "./common/Back";
 
+// Link 컴포넌트에 스타일 추가
+const StyledLink = styled(Link)`
+  text-decoration: none; /* 하이퍼링크 텍스트 밑줄 제거 */
+  color: inherit; /* 기본 텍스트 색상으로 설정 */
+`;
+
 const Container = styled.div`
   margin: 0 auto;
   display: flex;
@@ -76,7 +82,6 @@ const Date = styled.span`
 `;
 
 export default function BoradItem(props) {
-  
   let post = props?.item?.posts;
 
   const decodeBase64 = (base64) => {
@@ -84,13 +89,12 @@ export default function BoradItem(props) {
     return decodedImage;
   };
 
-  const decodedImage = decodeBase64(props.item.posts.image);
-
   return (
     <Container>
       <ItemContainer>
-        {post?.map((item,index) => (
-          <Link to={`./detail/${item._id}`} key={item._id}>
+        {post?.map((item, index) => (
+          // StyledLink 컴포넌트로 Link 감싸기
+          <StyledLink to={`./detail/${item._id}`} key={item._id}>
             <Box>
               {/* 이미지를 표시하려면 이미지 URL을 사용하도록 수정 */}
               <ItemImg src={decodeBase64(item.image)} alt='x' />
@@ -111,7 +115,7 @@ export default function BoradItem(props) {
               </Contents>
             </Box>
             <Hr />
-          </Link>
+          </StyledLink>
         ))}
       </ItemContainer>
     </Container>

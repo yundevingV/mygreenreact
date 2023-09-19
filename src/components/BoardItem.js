@@ -87,7 +87,7 @@ const Date = styled.span`
 `;
 
 export default function BoradItem(props) {
-  let post = props?.item?.posts;
+  let post = props?.item;
 
   const decodeBase64 = (base64) => {
     const decodedImage = `data:image/jpeg;base64,${base64}`;

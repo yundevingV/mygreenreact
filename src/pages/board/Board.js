@@ -38,8 +38,9 @@ export default function Board(){
                 console.log(response);
                 setTotalPage(response.data.totalPages);
 
-                setData(response.data);
+                const reversedData = response.data.posts.slice().reverse();
 
+                setData(reversedData);
                 console.log('success')
 
                 dispatch(setCookie(id));

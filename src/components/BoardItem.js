@@ -94,7 +94,10 @@ export default function BoradItem(props) {
     return decodedImage;
   };
   function formatDate(dateString) {
+    
+    console.log(typeof(dateString))
     const parts = dateString.split(" ");
+    
     const datePart = parts[0];
     const timePart = parts[1].split(".")[0];
     return `${datePart} ${timePart}`;
@@ -116,8 +119,8 @@ export default function BoradItem(props) {
                   <span>{item.content}</span>
                 </Content>
                 <Date>
-                  {item.date ? (
-                    <>{formatDate(props.item.date)}</>
+                  {item?.date ? (
+                    <>{props.item.date}</>
                   ) : (
                     <></>
                   )}
